@@ -533,7 +533,8 @@ b.innerHTML = '<span class="wd">'+weekday.short+'</span>'+plan[d].day;
 
     function renderContent(){
       const p = plan[cD];
-      let h = '<div class="day-title"><span class="num">'+p.day+'</span>День '+p.day+'<span class="weekday">• '+p.wd+'</span></div>';
+      const weekday = getWeekdayNamesByDate(selectedDate);
+let h = '<div class="day-title"><span class="num">'+p.day+'</span>День '+p.day+'<span class="weekday">• '+weekday.full+'</span></div>';
 
       MT.forEach((m,mi) => {
         const data = p[m.k];
