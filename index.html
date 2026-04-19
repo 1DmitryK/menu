@@ -346,17 +346,14 @@
     ];
 
     const plan=[];
-    for(let d=0; d<T; d++){
-      plan.push({
-        day:d+1,
-        wd:WF[d%7],
-        ws:WD[d%7],
-        b:[B[d%B.length], B[(d+14)%B.length]],
-        l:[L[d%L.length], L[(d+14)%L.length]],
-        d:[D[d%D.length], D[(d+14)%D.length]]
-      });
-    }
-
+for(let d=0; d<T; d++){
+  plan.push({
+    day:d+1,
+    b:[B[d%B.length], B[(d+14)%B.length]],
+    l:[L[d%L.length], L[(d+14)%L.length]],
+    d:[D[d%D.length], D[(d+14)%D.length]]
+  });
+}
     function normalizeDate(date){
       return new Date(date.getFullYear(), date.getMonth(), date.getDate());
     }
