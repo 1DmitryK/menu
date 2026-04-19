@@ -513,7 +513,11 @@ for(let d=0; d<T; d++){
       for(let d=cW*7; d<cW*7+7; d++){
         const b = document.createElement('button');
         b.className = 'day-btn' + (d===cD ? ' active' : '');
-        b.innerHTML = '<span class="wd">'+plan[d].ws+'</span>'+plan[d].day;
+        const tempDate = new Date(selectedDate);
+tempDate.setDate(selectedDate.getDate() + (d - cD));
+const weekday = getWeekdayNamesByDate(tempDate);
+
+b.innerHTML = '<span class="wd">'+weekday.short+'</span>'+plan[d].day;
         b.onclick = () => {
           cD = d;
           const offset = d - getCycleDayIndexByDate(selectedDate);
