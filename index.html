@@ -378,6 +378,16 @@ for(let d=0; d<T; d++){
       const d = String(date.getDate()).padStart(2,'0');
       return `${y}-${m}-${d}`;
     }
+    function getWeekdayNamesByDate(date){
+  const dayIndex = date.getDay(); // 0 = воскресенье
+  const shortNames = ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
+  const fullNames = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
+
+  return {
+    short: shortNames[dayIndex],
+    full: fullNames[dayIndex]
+  };
+}
 
     let selectedDate = normalizeDate(new Date());
     let cD = getCycleDayIndexByDate(selectedDate);
